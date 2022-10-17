@@ -1,4 +1,4 @@
-var animation = bodymovin.loadAnimation({
+let animation = bodymovin.loadAnimation({
     container: document.getElementById('lottie'),
     renderer: "svg",
     loop: true,
