@@ -66,7 +66,7 @@
         var change = Math.abs(x1-x2+y1-y2+z1-z2);
         shakeCounter = 0
         if (change > sensitivity) {
-            alert('Shake!');
+            
             shakeCounter++
             document.getElementById("shakeProgress").value += 5;
         }
@@ -89,7 +89,7 @@
         <button id="accelPermsButton"  class="button-64" onclick="getAccel()"><p>If you're on iOS, please click here to enable permissions!</p></button>
         <div class="indicatorDot" style="left:30%; top:30%;"></div>
         <p class="mixLvl">Mix Level:</p>
-        <progress class ='bar'id="shakeProgress" value=0 max="100">  </progress>
+        <progress style="height:200px;color:rgb(185, 185, 255);"class ='bar'id="shakeProgress" value=0 max="100">  </progress>
 
         
        </div> 
