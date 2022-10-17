@@ -38,7 +38,7 @@
     // Listen to motion events and update the position
     window.addEventListener('devicemotion', function (e) {
         x1 = e.accelerationIncludingGravity.x;
-        y1 = e.accelerationIncludingGravity.y;
+        // y1 = e.accelerationIncludingGravity.y;
         z1 = e.accelerationIncludingGravity.z;
     }, false);
 
@@ -47,7 +47,7 @@
     // Periodically check the position and fire
     // if the change is greater than the sensitivity
     setInterval(function () {
-        var change = Math.abs(x1-x2+y1-y2+z1-z2);
+        var change = Math.abs(x1-x2+z1-z2);
         shakeCounter = 0
         if (change > sensitivity) {
             
@@ -62,7 +62,7 @@
 
         // Update new position
         x2 = x1;
-        y2 = y1;
+        // y2 = y1;
         z2 = z1;
     }, 150);
 }

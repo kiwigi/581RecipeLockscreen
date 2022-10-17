@@ -6,7 +6,8 @@ body{
     
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#AA9BC4,#554E62)
+    background-image: url('assets/background.jpg');
+    /* background: linear-gradient(#AA9BC4,#554E62) */
     
 }
 html{
@@ -130,6 +131,7 @@ a{
     border-style: solid;
     border-width: 4px;
     box-shadow: 10px 10px 50px 1px #2a213a;
+    
 
 }
 
@@ -149,6 +151,7 @@ a{
     height: 520px;
     /* height:360px; */
     object-fit: cover;
+    
 }
 .boba2{
     width:885px;
