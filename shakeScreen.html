@@ -70,7 +70,8 @@
     
     <div class="screen">
       <p class="sTitle">Shake device to mix!</p>
-      
+      <button id="accelPermsButton"  class="button-64" onclick="getAccel()"><p>iOS users! Please click here to enable permissions </p></button>
+
       <img class='lock'src='assets/lock.png'/>
        <div class="bobaContainer">
         <!-- <div id="animationContainer"> -->
@@ -79,10 +80,11 @@
 
         <!-- </div> -->
         <!-- <img class="boba2"src='assets/emptyBobaCup.png'/> -->
-        <button id="accelPermsButton"  class="button-64" onclick="getAccel()"><p>If you're on iOS, please click here to enable permissions!</p></button>
         <div class="indicatorDot" style="left:30%; top:30%;"></div>
-        <p class="mixLvl">Mix Level:</p>
-        <progress style="height:200px;color:rgb(185, 185, 255);"class ='bar'id="shakeProgress" value=0 max="100">  </progress>
+        <div class="prog">
+            <p class="mixLvl">Mix Level:</p>
+            <progress style="height:200px;color:rgb(185, 185, 255);"class ='bar'id="shakeProgress" value=0 max="100">  </progress>
+        </div>
 
         
        </div> 
