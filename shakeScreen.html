@@ -42,6 +42,10 @@
         z1 = e.accelerationIncludingGravity.z;
     }, false);
 
+    function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     // Periodically check the position and fire
     // if the change is greater than the sensitivity
     setInterval(function () {
@@ -54,6 +58,7 @@
             document.getElementById("shakeProgress").value += 5;
         }
         else {
+            sleep(30);
             animation.stop();
         }
 
