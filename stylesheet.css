@@ -21,7 +21,18 @@ a{
     color: #212121;
 }
   
-
+#lottie{
+    
+    width:750px;
+    /* height:100%; */
+    margin-left: auto;
+    margin-right:auto;
+    display:block;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    text-align: center;
+    opacity: 1;
+}
 
 /* CSS */
 .button-64 {
