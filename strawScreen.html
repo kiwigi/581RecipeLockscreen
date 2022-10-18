@@ -1,85 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css" />
     <title>Recipe Lockscreen</title>
-
   </head>
-  
-  
+
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
-   
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
+      integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script>
-    function getAccel(){
-    DeviceMotionEvent.requestPermission().then(response => {
-        if (response == 'granted') {
-        // Add a listener to get smartphone acceleration 
+      function getAccel() {
+        DeviceMotionEvent.requestPermission().then((response) => {
+          if (response == "granted") {
+            // Add a listener to get smartphone acceleration
             // in the XYZ axes (units in m/s^2)
-            window.addEventListener('devicemotion', (event) => {
-                console.log(event);
+            window.addEventListener("devicemotion", (event) => {
+              console.log(event);
             });
-       // Add a listener to get smartphone orientation 
-           // in the alpha-beta-gamma axes (units in degrees)
-            window.addEventListener('deviceorientation',(event) => {
-                console.log(event);
+            // Add a listener to get smartphone orientation
+            // in the alpha-beta-gamma axes (units in degrees)
+            window.addEventListener("deviceorientation", (event) => {
+              console.log(event);
             });
-        }
-    });
-}
-    if (typeof window.DeviceMotionEvent != 'undefined') {
-    // Shake sensitivity (a lower number is more)
-    var sensitivity = 20;
+          }
+        });
+      }
+      if (typeof window.DeviceMotionEvent != "undefined") {
+        // Shake sensitivity (a lower number is more)
+        var sensitivity = 20;
 
-    // Position variables
-    var y1 = 0, y2 = 0;
+        // Position variables
+        var y1 = 0,
+          y2 = 0;
 
-    // Listen to motion events and update the position
-    window.addEventListener('devicemotion', function (e) {
-        x1 = e.accelerationIncludingGravity.x;
-        y1 = e.accelerationIncludingGravity.y;
-        z1 = e.accelerationIncludingGravity.z;
-    }, false);
+        // Listen to motion events and update the position
+        window.addEventListener(
+          "devicemotion",
+          function (e) {
+            x1 = e.accelerationIncludingGravity.x;
+            y1 = e.accelerationIncludingGravity.y;
+            z1 = e.accelerationIncludingGravity.z;
+          },
+          false
+        );
 
-  
-    let shakeProgress = sessionStorage.getItem("shakeProgress");
-    // Periodically check the position and fire
-    // if the change is greater than the sensitivity
-    setInterval(function () {
-        var change = Math.abs(y2-y1);
-        if (change > sensitivity) {
+        let shakeProgress = sessionStorage.getItem("shakeProgress");
+        let teaFlavour = sessionStorage.getItem("teaFlavour");
+
+        // Periodically check the position and fire
+        // if the change is greater than the sensitivity
+        setInterval(function () {
+          console.log(teaFlavour);
+          var change = Math.abs(y2 - y1);
+          if (change > sensitivity) {
             document.getElementById("boba").src = "assets/cupWithStraw.png";
             document.getElementById("test").innerHTML = shakeProgress;
-            if (shakeProgress == 0) {
-
+            if (shakeProgress == 0 && teaFlavour == "matchaTea") {
+              //success
             } else {
-                window.location.href = "tryAgainScreen.html";
+              window.location.href = "tryAgainScreen.html";
             }
-        }
-  
-        // Update new position
-        y2 = y1;
-    }, 150);
-}
+          }
+
+          // Update new position
+          y2 = y1;
+        }, 150);
+      }
     </script>
-    
+
     <div class="screen">
       <p class="sTitle">Put in the straw!</p>
-      <button id="accelPermsButton"  class="button-64" onclick="getAccel()"><p>iOS users! Please click here to enable permissions </p></button>
+      <button id="accelPermsButton" class="button-64" onclick="getAccel()">
+        <p>iOS users! Please click here to enable permissions</p>
+      </button>
 
-      <img class='lock'src='assets/lock.png'/>
-       <div class="bobaContainer">
+      <img class="lock" src="assets/lock.png" />
+      <div class="bobaContainer">
         <!-- <div id="animationContainer"> -->
 
         <!-- </div> -->
-        <img id="boba" class="boba2"src='assets/emptyBobaCup.png'/>  
+        <img id="boba" class="boba2" src="assets/emptyBobaCup.png" />
         <p id="test">test</p>
-       </div> 
+      </div>
     </div>
     <script src="lottie.js"></script>
     <script src="script.js"></script>
-
   </body>
-
 </html>
