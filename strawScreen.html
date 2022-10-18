@@ -55,11 +55,10 @@
         // Periodically check the position and fire
         // if the change is greater than the sensitivity
         setInterval(function () {
-          console.log(teaFlavour);
+          document.getElementById("test").innerHTML = shakeProgress;
           var change = Math.abs(y2 - y1);
           if (change > sensitivity) {
             document.getElementById("boba").src = "assets/cupWithStraw.png";
-            document.getElementById("test").innerHTML = shakeProgress;
             if (shakeProgress == 0 && teaFlavour == "matchaTea") {
               //success
             } else {
