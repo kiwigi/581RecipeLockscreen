@@ -43,16 +43,15 @@
     }, false);
 
   
-
+    let shakeProgress = sessionStorage.getItem("shakeProgress");
     // Periodically check the position and fire
     // if the change is greater than the sensitivity
     setInterval(function () {
         var change = Math.abs(y2-y1);
         if (change > sensitivity) {
             document.getElementById("boba").src = "assets/cupWithStraw.png";
-            let shakeProgress = sessionStorage.getItem("shakeProgress");
             document.getElementById("test").innerHTML = shakeProgress;
-            if (shakeProgress === 0) {
+            if (shakeProgress == 0) {
 
             } else {
                 document.getElementById("boba").src = "assets/wrongOrder.png";

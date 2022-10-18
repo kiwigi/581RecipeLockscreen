@@ -42,7 +42,7 @@
         z1 = e.accelerationIncludingGravity.z;
     }, false);
 
-  
+    sessionStorage.setItem("shakeProgress", 0);
 
     // Periodically check the position and fire
     // if the change is greater than the sensitivity
@@ -54,11 +54,11 @@
             shakeCounter++
             animation.play();
             document.getElementById("shakeProgress").value += 5;
+            sessionStorage.setItem("shakeProgress", shakeCounter * 5);
         }
         if (document.getElementById("shakeProgress").value==100){
             animation.stop();
         }
-        sessionStorage.setItem("shakeProgress", shakeCounter * 5);
         // Update new position
         x2 = x1;
         y2 = y1;
