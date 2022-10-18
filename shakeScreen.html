@@ -58,7 +58,7 @@
         if (document.getElementById("shakeProgress").value==100){
             animation.stop();
         }
-  
+        sessionStorage.setItem("shakeProgress", document.getElementById("shakeProgress").value);
         // Update new position
         x2 = x1;
         y2 = y1;

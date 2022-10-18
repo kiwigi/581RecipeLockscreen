@@ -33,7 +33,7 @@
     var sensitivity = 20;
 
     // Position variables
-    var x1 = 0, y1 = 0, z1 = 0, x2 = 0, y2 = 0, z2 = 0;
+    var y1 = 0, y2 = 0;
 
     // Listen to motion events and update the position
     window.addEventListener('devicemotion', function (e) {
@@ -50,12 +50,17 @@
         var change = Math.abs(y2-y1);
         if (change > sensitivity) {
             document.getElementById("boba").src = "assets/cupWithStraw.png";
+            let shakeProgress = sessionStorage.getItem("shakeProgress");
+            document.getElementById("test").innerHTML = shakeProgress;
+            if (shakeProgress === 0) {
+
+            } else {
+                document.getElementById("boba").src = "assets/wrongOrder.png";
+            }
         }
   
         // Update new position
-        x2 = x1;
         y2 = y1;
-        z2 = z1;
     }, 150);
 }
     </script>
@@ -69,7 +74,7 @@
         <!-- <div id="animationContainer"> -->
 
         <!-- </div> -->
-        <img id="boba" class="boba2"src='assets/emptyBobaCup.png'/>   
+        <img id="boba" class="boba2"src='assets/emptyBobaCup.png'/>  
        </div> 
     </div>
     <script src="lottie.js"></script>
