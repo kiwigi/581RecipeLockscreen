@@ -14,22 +14,6 @@
     ></script>
 
     <script>
-      function getAccel() {
-        DeviceMotionEvent.requestPermission().then((response) => {
-          if (response == "granted") {
-            // Add a listener to get smartphone acceleration
-            // in the XYZ axes (units in m/s^2)
-            window.addEventListener("devicemotion", (event) => {
-              console.log(event);
-            });
-            // Add a listener to get smartphone orientation
-            // in the alpha-beta-gamma axes (units in degrees)
-            window.addEventListener("deviceorientation", (event) => {
-              console.log(event);
-            });
-          }
-        });
-      }
       if (typeof window.DeviceMotionEvent != "undefined") {
         // Shake sensitivity (a lower number is more)
         var sensitivity = 20;
@@ -42,9 +26,7 @@
         window.addEventListener(
           "devicemotion",
           function (e) {
-            x1 = e.accelerationIncludingGravity.x;
             y1 = e.accelerationIncludingGravity.y;
-            z1 = e.accelerationIncludingGravity.z;
           },
           false
         );
@@ -55,11 +37,10 @@
         // Periodically check the position and fire
         // if the change is greater than the sensitivity
         setInterval(function () {
-          document.getElementById("test").innerHTML = shakeProgress;
           var change = Math.abs(y2 - y1);
           if (change > sensitivity) {
             document.getElementById("boba").src = "assets/cupWithStraw.png";
-            if (shakeProgress == 0 && teaFlavour == "matchaTea") {
+            if (shakeProgress == 0 && teaFlavour == "matcha") {
               //success
             } else {
               window.location.href = "tryAgainScreen.html";
@@ -70,21 +51,28 @@
           y2 = y1;
         }, 150);
       }
+
+      window.onload = function () {
+        let teaFlavour = sessionStorage.getItem("teaFlavour");
+        console.log(teaFlavour);
+        if (teaFlavour == "milk") {
+          document.getElementById("boba").src = "assets/milk.png";
+        } else if (teaFlavour == "matcha") {
+          document.getElementById("boba").src = "assets/matcha.png";
+        } else if (teaFlavour == "taro") {
+          document.getElementById("boba").src = "assets/taro.png";
+        } else if (teaFlavour == "strawberry") {
+          document.getElementById("boba").src = "assets/strawberry.png";
+        }
+      };
     </script>
 
     <div class="screen">
       <p class="sTitle">Put in the straw!</p>
-      <button id="accelPermsButton" class="button-64" onclick="getAccel()">
-        <p>iOS users! Please click here to enable permissions</p>
-      </button>
 
       <img class="lock" src="assets/lock.png" />
       <div class="bobaContainer">
-        <!-- <div id="animationContainer"> -->
-
-        <!-- </div> -->
         <img id="boba" class="boba2" src="assets/emptyBobaCup.png" />
-        <p id="test">test</p>
       </div>
     </div>
     <script src="lottie.js"></script>
