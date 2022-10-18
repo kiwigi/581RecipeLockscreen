@@ -51,6 +51,7 @@
         if (change > sensitivity) {
             document.getElementById("boba").src = "assets/cupWithStraw.png";
             let shakeProgress = sessionStorage.getItem("shakeProgress");
+            document.getElementById("test").innerHTML = shakeProgress;
             if (shakeProgress === 0) {
 
             } else {
@@ -74,6 +75,7 @@
 
         <!-- </div> -->
         <img id="boba" class="boba2"src='assets/emptyBobaCup.png'/>  
+        <p id="test">test</p>
        </div> 
     </div>
     <script src="lottie.js"></script>
