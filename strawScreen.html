@@ -39,7 +39,15 @@
         setInterval(function () {
           var change = Math.abs(y2 - y1);
           if (change > sensitivity) {
-            document.getElementById("boba").src = "assets/cupWithStraw.png";
+            if (teaFlavour == "milk") {
+              document.getElementById("boba").src = "assets/milkWithStraw.png";
+            } else if (teaFlavour == "matcha") {
+              document.getElementById("boba").src = "assets/matchaWithStraw.png";
+            } else if (teaFlavour == "taro") {
+              document.getElementById("boba").src = "assets/taroWithStraw.png";
+            } else if (teaFlavour == "strawberry") {
+              document.getElementById("boba").src = "assets/strawberryWithStraw.png";
+            }
             if (shakeProgress == 0 && teaFlavour == "matcha") {
               //success
             } else {
