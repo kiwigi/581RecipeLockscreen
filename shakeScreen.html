@@ -28,6 +28,7 @@
         });
       }
 
+      let shakeCounter = 0;
       if (typeof window.DeviceMotionEvent != "undefined") {
         var sensitivity = 20;
 
@@ -61,7 +62,7 @@
           animation.play();
           document.getElementById("shakeProgress").value += 5;
           document.getElementById("progNum").innerHTML =
-            document.getElementById("shakeProgress").value + "%";
+          document.getElementById("shakeProgress").value + "%";
           sound.play();
           saveShakeProgress();
 
