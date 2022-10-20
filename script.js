@@ -28,3 +28,10 @@ let animation = bodymovin.loadAnimation({
     path: chooseDrink(localStorage.getItem('selectedFlavour'))
 })
 
+let strawAnimation = bodymovin.loadAnimation({
+    container: document.getElementById('strawAnimation'),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: 'assets/insertStraw.json'
+})
