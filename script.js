@@ -2,21 +2,29 @@
 
 function chooseDrink(id){
     let path = ''
+    let strawPath = ''
 
     if(id=="milk"){
         path = 'assets/milkShake.json'
+        strawPath = 'assets/milkStraw.json'
     }
     else if(id=="matcha"){
         path = 'assets/matchaShake.json'
+        strawPath = 'assets/matchaStraw.json'
     }
     else if(id=="taro"){
         path = 'assets/taroShake.json'
+        strawPath = 'assets/taroStraw.json'
+
     }else{//berry
         path = 'assets/berryShake.json'
+        strawPath = 'assets/berryStraw.json'
+
 
     }
-    return path
+    return [path, strawPath]
 }
+
 
 
 
@@ -25,7 +33,7 @@ let animation = bodymovin.loadAnimation({
     renderer: "svg",
     loop: true,
     autoplay: false,
-    path: chooseDrink(localStorage.getItem('selectedFlavour'))
+    path: chooseDrink(localStorage.getItem('selectedFlavour'))[0]
 })
 
 let strawAnimation = bodymovin.loadAnimation({
@@ -33,5 +41,5 @@ let strawAnimation = bodymovin.loadAnimation({
     renderer: "svg",
     loop: false,
     autoplay: false,
-    path: 'assets/insertStraw.json'
+    path: chooseDrink(localStorage.getItem('selectedFlavour'))[1]
 })

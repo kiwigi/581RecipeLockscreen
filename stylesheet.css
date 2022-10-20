@@ -54,7 +54,6 @@ progress{
   align-items: center;
   margin-left: auto;
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
   font-weight: 700;
   margin-right: auto;
   background-image: linear-gradient(144deg, #e3d3ff, #a092ff 50%, #ffc6db);
@@ -97,7 +96,7 @@ progress{
 
 @media (min-width: 768px) {
   .button-64 {
-    font-size: 25px;
+    font-size: 30px;
     min-width: 196px;
   }
 }
