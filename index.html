@@ -1,17 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css" />
     <title>Recipe Lockscreen</title>
-
   </head>
-  
-  <body>
 
-    
-    
+  <body>
+    <script>
+      window.onload = function () {
+        document.getElementById("milkTea").onclick = function () {
+          sessionStorage.setItem("teaFlavour", "milk");
+        };
+        document.getElementById("matchaTea").onclick = function () {
+          sessionStorage.setItem("teaFlavour", "matcha");
+        };
+        document.getElementById("taroTea").onclick = function () {
+          sessionStorage.setItem("teaFlavour", "taro");
+        };
+        document.getElementById("strawberryTea").onclick = function () {
+          sessionStorage.setItem("teaFlavour", "strawberry");
+        };
+      };
+    </script>
+
     <div class="screen">
+
       <img class="titleImg"src="assets/selFlav.png"/>
       <!-- <p class="sTitle">Select Favour</p> -->
       
@@ -28,12 +41,15 @@
         </a>
         <a id="berry" onclick="localStorage.setItem('selectedFlavour', 'berry')" href='shakeScreen.html' class="boba1T"> 
           <img class="boba1"src='assets/berry1.png'/>
+
         </a>
-       </div> 
+      </div>
     </div>
+
+
     
     <script src="lottie.js"></script>
     <script src="script.js"></script>
-  </body>
 
+  </body>
 </html>

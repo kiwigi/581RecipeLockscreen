@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css" />
     <title>Recipe Lockscreen</title>
-
   </head>
-  
-  
+
   <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
-   
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
+      integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script>
+
+
     function getAccel(){
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
@@ -30,8 +34,19 @@
 
     var sensitivity = 20;
 
-    // Position variables
-    var x1 = 0, y1 = 0, z1 = 0, x2 = 0, y2 = 0, z2 = 0;
+
+        // Position variables
+        var x1 = 0,
+          y1 = 0,
+          z1 = 0,
+          x2 = 0,
+          y2 = 0,
+          z2 = 0;
+
+        function saveShakeProgress() {
+          sessionStorage.setItem("shakeProgress", shakeCounter * 5);
+        }
+      }
 
    
     window.addEventListener('devicemotion', function (e) {
@@ -61,10 +76,20 @@
         z2 = z1;
     }, 150);
 }
+
     </script>
-    
+
     <div class="screen">
       <p class="sTitle">Shake device to mix!</p>
+
+        <div class="next">
+          <a href="strawScreen.html">
+            <button class="nextButton" onclick="saveShakeProgress()">
+              Next
+            </button>
+          </a>
+        </div>
+
       <button id="accelPermsButton"  class="button-64" onclick="getAccel()"><p>iOS users! Please click here to enable permissions </p></button>
       
       
@@ -77,10 +102,9 @@
            </div>
        </div>
        </div> 
+
     </div>
     <script src="lottie.js"></script>
     <script src="script.js"></script>
-
   </body>
-
 </html>

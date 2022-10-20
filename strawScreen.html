@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Recipe Lockscreen</title>
+  </head>
+
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
+      integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      if (typeof window.DeviceMotionEvent != "undefined") {
+        // Shake sensitivity (a lower number is more)
+        var sensitivity = 20;
+
+        // Position variables
+        var y1 = 0,
+          y2 = 0;
+
+        // Listen to motion events and update the position
+        window.addEventListener(
+          "devicemotion",
+          function (e) {
+            y1 = e.accelerationIncludingGravity.y;
+          },
+          false
+        );
+
+        let shakeProgress = sessionStorage.getItem("shakeProgress");
+        let teaFlavour = sessionStorage.getItem("teaFlavour");
+
+        // Periodically check the position and fire
+        // if the change is greater than the sensitivity
+        setInterval(function () {
+          var change = Math.abs(y2 - y1);
+          if (change > sensitivity) {
+            if (teaFlavour == "milk") {
+              document.getElementById("boba").src = "assets/milkWithStraw.png";
+            } else if (teaFlavour == "matcha") {
+              document.getElementById("boba").src = "assets/matchaWithStraw.png";
+            } else if (teaFlavour == "taro") {
+              document.getElementById("boba").src = "assets/taroWithStraw.png";
+            } else if (teaFlavour == "strawberry") {
+              document.getElementById("boba").src = "assets/strawberryWithStraw.png";
+            }
+            if (shakeProgress == 0 && teaFlavour == "matcha") {
+              window.location.href = "fakeHomeScreen.html";
+            } else {
+              window.location.href = "tryAgainScreen.html";
+            }
+          }
+
+          // Update new position
+          y2 = y1;
+        }, 150);
+      }
+
+      window.onload = function () {
+        let teaFlavour = sessionStorage.getItem("teaFlavour");
+        if (teaFlavour == "milk") {
+          document.getElementById("boba").src = "assets/milk.png";
+        } else if (teaFlavour == "matcha") {
+          document.getElementById("boba").src = "assets/matcha.png";
+        } else if (teaFlavour == "taro") {
+          document.getElementById("boba").src = "assets/taro.png";
+        } else if (teaFlavour == "strawberry") {
+          document.getElementById("boba").src = "assets/strawberry.png";
+        }
+      };
+    </script>
+
+    <div class="screen">
+      <p class="sTitle">Put in the straw!</p>
+
+      <img class="lock" src="assets/lock.png" />
+      <div class="bobaContainer">
+        <img id="boba" class="boba2" src="assets/emptyBobaCup.png" />
+      </div>
+    </div>
+    <script src="lottie.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

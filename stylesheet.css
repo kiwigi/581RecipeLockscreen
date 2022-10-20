@@ -1,3 +1,5 @@
+
+=======
 body{
 
     
@@ -43,21 +45,22 @@ progress{
    
     margin-left: auto;
     margin-right:auto;
+
 }
 
 .button-64 {
   align-items: center;
   margin-left: auto;
-  font-family: 'Poppins', sans-serif ;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: 700;
-  margin-right:auto;
-  background-image: linear-gradient(144deg,#E3D3FF, #a092ff 50%,#ffc6db);
+  margin-right: auto;
+  background-image: linear-gradient(144deg, #e3d3ff, #a092ff 50%, #ffc6db);
   border: 0;
   border-radius: 20px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   line-height: 1em;
@@ -96,6 +99,7 @@ progress{
     min-width: 196px;
   }
 }
+
 
 .screen{
     display: flex;
@@ -172,6 +176,32 @@ progress{
     
 }
 
+
+.next {
+  display: block;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nextButton {
+  font-family: Cattyla;
+  width: 230px;
+  height: 130px;
+  font-size: 64px;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #e3d3ff;
+  border: 1px solid #fff;
+  -webkit-text-stroke: 2px #212121;
+}
+
+.tryAgain {
+  display: block;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+
 .mixLvl{
     font-family: Cattyla;
     font-size: 70px;
@@ -189,14 +219,53 @@ progress{
     display: block;
     margin-left: auto;
     margin-right: auto;
+
 }
 
+.tryAgainButton {
+  font-family: Cattyla;
+  width: 320px;
+  height: 130px;
+  font-size: 64px;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #e3d3ff;
+  border: 1px solid #fff;
+  -webkit-text-stroke: 2px #212121;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-@font-face {
-    font-family: 'Cattyla'; /*a name to be used later*/
-    src: url('assets/Cattyla-nR5W0.ttf'); /*URL to font*/
+.hidden {
+  visibility: hidden;
 }
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:wght@700&display=swap');
 
+
+.wrongOrder {
+  width: 800px;
+  object-fit: cover;
+}
+
+.wrongOrderContainer {
+  background-color: #e3d3ff;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 90vw;
+  height: 150vw;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 80px;
+  border-color: #ac82f7;
+  border-style: solid;
+  border-width: 4px;
+  box-shadow: 10px 10px 50px 1px #2a213a;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@font-face {
+  font-family: "Cattyla"; /*a name to be used later*/
+  src: url("assets/Cattyla-nR5W0.ttf"); /*URL to font*/
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Paytone+One&family=Poppins:wght@700&display=swap');
+
