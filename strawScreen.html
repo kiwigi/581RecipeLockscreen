@@ -32,7 +32,6 @@
         );
 
         let shakeProgress = sessionStorage.getItem("shakeProgress");
-        console.log(shakeProgress);
         let teaFlavour = localStorage.getItem("selectedFlavour");
 
         // Periodically check the position and fire
@@ -40,7 +39,14 @@
         setInterval(function () {
           var change = Math.abs(y2 - y1);
           if (change > sensitivity) {
-            if (shakeProgress == 0 && teaFlavour == "matcha") {
+
+
+            strawAnimation.play();
+            let shakeProgress = sessionStorage.getItem("shakeProgress");
+            alert(shakeProgress);
+            if ((shakeProgress == 30) && (teaFlavour == "matcha")) {
+              
+
               window.location.href = "fakeHomeScreen.html";
             } else {
               window.location.href = "tryAgainScreen.html";

@@ -56,6 +56,7 @@
         var change = Math.abs(z1 - z2 + x1 - x2);
         shakeCounter = 0;
         if (change > sensitivity) {
+
           shakeCounter++;
           animation.play();
           document.getElementById("shakeProgress").value += 5;
@@ -63,6 +64,7 @@
             document.getElementById("shakeProgress").value + "%";
           sound.play();
           saveShakeProgress();
+
         }
         if (document.getElementById("shakeProgress").value == 100) {
           animation.stop();
