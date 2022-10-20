@@ -62,12 +62,13 @@
         shakeCounter = 0
         if (change > sensitivity) {
             
-            shakeCounter++
+            
             animation.play();
             document.getElementById("shakeProgress").value += 5;
             document.getElementById("progNum").innerHTML = document.getElementById("shakeProgress").value+'%';
             sound.play();
-            saveShakeProgress();
+            sessionStorage.setItem("shakeProgress", document.getElementById("shakeProgress").value );
+
         }
         if (document.getElementById("shakeProgress").value==100){
             animation.stop();
