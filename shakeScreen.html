@@ -42,7 +42,7 @@
 
     const sound = new Audio('assets/shake.mp3')
   
-    onShake(function () {
+    setInterval(function () {
         var change = Math.abs(z1-z2);
         shakeCounter = 0
         if (change > sensitivity) {
