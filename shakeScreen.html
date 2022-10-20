@@ -14,26 +14,22 @@
     ></script>
 
     <script>
-
-
-    function getAccel(){
-    DeviceMotionEvent.requestPermission().then(response => {
-        if (response == 'granted') {
- 
-            window.addEventListener('devicemotion', (event) => {
-                console.log(event);
+      function getAccel() {
+        DeviceMotionEvent.requestPermission().then((response) => {
+          if (response == "granted") {
+            window.addEventListener("devicemotion", (event) => {
+              console.log(event);
             });
-   
-            window.addEventListener('deviceorientation',(event) => {
-                console.log(event);
+
+            window.addEventListener("deviceorientation", (event) => {
+              console.log(event);
             });
-        }
-    });
-}
-    if (typeof window.DeviceMotionEvent != 'undefined') {
+          }
+        });
+      }
 
-    var sensitivity = 20;
-
+      if (typeof window.DeviceMotionEvent != "undefined") {
+        var sensitivity = 20;
 
         // Position variables
         var x1 = 0,
@@ -42,75 +38,69 @@
           x2 = 0,
           y2 = 0,
           z2 = 0;
-
-        function saveShakeProgress() {
-          sessionStorage.setItem("shakeProgress", shakeCounter * 5);
-        }
       }
 
-   
-    window.addEventListener('devicemotion', function (e) {
-        x1 = e.accelerationIncludingGravity.x;
-        y1 = e.accelerationIncludingGravity.y;
-        z1 = e.accelerationIncludingGravity.z;
-    }, false);
+      window.addEventListener(
+        "devicemotion",
+        function (e) {
+          x1 = e.accelerationIncludingGravity.x;
+          y1 = e.accelerationIncludingGravity.y;
+          z1 = e.accelerationIncludingGravity.z;
+        },
+        false
+      );
 
-    const sound = new Audio('assets/shake.mp3')
-  
-    setInterval(function () {
-        var change = Math.abs(z1-z2+x1-x2);
-        shakeCounter = 0
+      const sound = new Audio("assets/shake.mp3");
+
+      setInterval(function () {
+        var change = Math.abs(z1 - z2 + x1 - x2);
+        shakeCounter = 0;
         if (change > sensitivity) {
-            
-            shakeCounter++
-            animation.play();
-            document.getElementById("shakeProgress").value += 5;
-            document.getElementById("progNum").innerHTML = document.getElementById("shakeProgress").value+'%';
-            sound.play();
-            saveShakeProgress();
+          shakeCounter++;
+          animation.play();
+          document.getElementById("shakeProgress").value += 5;
+          document.getElementById("progNum").innerHTML =
+            document.getElementById("shakeProgress").value + "%";
+          sound.play();
+          saveShakeProgress();
         }
-        if (document.getElementById("shakeProgress").value==100){
-            animation.stop();
-            sound.pause();
+        if (document.getElementById("shakeProgress").value == 100) {
+          animation.stop();
+          sound.pause();
         }
-  
+
         x2 = x1;
         z2 = z1;
-    }, 150);
+      }, 150);
 
-
+      function saveShakeProgress() {
+        sessionStorage.setItem("shakeProgress", shakeCounter * 5);
+      }
     </script>
 
     <div class="screen">
       <p class="sTitle">Shake device to mix!</p>
 
-        <div class="next">
-          <a href="strawScreen.html">
-            <button class="nextButton" onclick="saveShakeProgress()">
-              Next
-            </button>
-          </a>
-        </div>
+      <div class="next">
+        <a href="strawScreen.html">
+          <button class="nextButton" onclick="saveShakeProgress()">Next</button>
+        </a>
+      </div>
 
-      
-      
       <div class="bobaContainer">
-           <div id="lottie"></div>
-       <div className="mixProg">
-        <div style="display:flex; flex-direction: row;">
-           <p class="mixLvl">Mix Level:</p>
-           <div id="progNum"> 0% </div>
+        <div id="lottie"></div>
+        <div className="mixProg">
+          <p class="mixLvl">Mix Level:</p>
+          <div class="prog">
+            <progress id="shakeProgress" value="100" max="100"></progress>
+            <div id="progNum">0%</div>
+          </div>
         </div>
-           <div class="prog">
-               <progress id="shakeProgress" value=0 max="100"></progress>
-               
-           </div>
-       </div>
-       </div> 
+      </div>
 
-       <button id="accelPermsButton"  class="button-64" onclick="getAccel()"><p>iOS users! Please click here to enable permissions </p></button>
-
-
+      <button id="accelPermsButton" class="button-64" onclick="getAccel()">
+        <p>iOS users! Please click here to enable permissions</p>
+      </button>
     </div>
     <script src="lottie.js"></script>
     <script src="script.js"></script>
