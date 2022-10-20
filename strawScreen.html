@@ -40,11 +40,13 @@
           var change = Math.abs(y2 - y1);
           if (change > sensitivity) {
 
+
             strawAnimation.play();
             let shakeProgress = sessionStorage.getItem("shakeProgress");
             alert(shakeProgress);
             if ((shakeProgress == 30) && (teaFlavour == "matcha")) {
               
+
               window.location.href = "fakeHomeScreen.html";
             } else {
               window.location.href = "tryAgainScreen.html";
@@ -55,19 +57,6 @@
           y2 = y1;
         }, 150);
       }
-
-      // window.onload = function () {
-      //   let teaFlavour = localStorage.getItem("selectedFlavour");
-      //   if (teaFlavour == "milk") {
-      //     document.getElementById("boba").src = "assets/milk.png";
-      //   } else if (teaFlavour == "matcha") {
-      //     document.getElementById("boba").src = "assets/matcha.png";
-      //   } else if (teaFlavour == "taro") {
-      //     document.getElementById("boba").src = "assets/taro.png";
-      //   } else if (teaFlavour == "berry") {
-      //     document.getElementById("boba").src = "assets/strawberry.png";
-      //   }
-      // };
     </script>
 
     <div class="screen">
