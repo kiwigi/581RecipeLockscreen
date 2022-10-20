@@ -32,6 +32,7 @@
         );
 
         let shakeProgress = sessionStorage.getItem("shakeProgress");
+        console.log(shakeProgress);
         let teaFlavour = localStorage.getItem("selectedFlavour");
 
         // Periodically check the position and fire
@@ -51,7 +52,10 @@
             //     "assets/strawberryWithStraw.png";
             // }
             strawAnimation.play();
+            
+            alert(shakeProgress);
             if ((shakeProgress == 30) && (teaFlavour == "matcha")) {
+              
               window.location.href = "fakeHomeScreen.html";
             } else {
               window.location.href = "tryAgainScreen.html";
