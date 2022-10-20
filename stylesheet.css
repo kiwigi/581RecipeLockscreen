@@ -1,22 +1,15 @@
-
 body{
-    
-    /* height: 844px;
-    width: 390px; */
+
     
     justify-content: center;
     align-items: center;
     background-image: url('assets/r2.png');
     background-repeat: no-repeat;
     background-size: cover;
-
-    
-    /* background: linear-gradient(#AA9BC4,#554E62) */
     
 }
 html{
-    /* height: 844px;
-    width: 390px; */
+   
     margin:0;
     min-height:100%;
     min-width:100%;
@@ -36,7 +29,6 @@ progress{
 #lottie{
     
     width:750px;
-    /* height:100%; */
     margin-left: auto;
     margin-right:auto;
     display:block;
@@ -52,7 +44,7 @@ progress{
     margin-left: auto;
     margin-right:auto;
 }
-/* CSS */
+
 .button-64 {
   align-items: center;
   margin-left: auto;
@@ -114,24 +106,19 @@ progress{
     
 }
 .sTitle{
-    
-    /* font-family: 'Josefin Sans', sans-serif; */
-    /* font-family: 'Poppins', sans-serif ; */
+   
     font-weight: 700;
     font-family: Cattyla;
     text-align: center;
     -webkit-text-stroke: 3px #212121;
     font-size: 100px;
     color: #E3D3FF;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 20px;
-    
-    
-    
  
 }
 .bobaContainer{
-    /* background-color: #E3D3FF; */
+    
     margin-left: auto;
     margin-right:auto;
     display: flex;
@@ -142,24 +129,15 @@ progress{
     flex-wrap: wrap;
     border-radius: 80px;
     justify-content: center;
-    /* border-color: #AC82F7; */
-    /* border-style: solid;
-    border-width: 4px; */
-    /* box-shadow: 10px 10px 50px 1px #2a213a; */
+   
     
 
 }
 
 .boba1T{
-    /* margin-left: auto;
-    margin-right:auto; */
-    /* width:440px; */
+   
     margin:0;
-    /* text-align: center;
-    font-family: Cattyla; */
     color: white;
-    /* -webkit-text-stroke: 3px #212121;
-    font-size: 50px; */
 
 }
 
@@ -169,25 +147,15 @@ progress{
     margin-right:auto;
     width:520px;
     height: 520px;
-    /* height:360px; */
-    /* object-fit: cover; */
     display: flex;
     flex-wrap: wrap;
     
 }
 .boba2{
     width:885px;
-    /* height:360px; */
     object-fit: cover;
 }
 
-.lock{ 
-    width:70px;
-    margin-left: auto;
-    margin-right:auto;
-    padding-bottom: 100px;
-
-}
 .bar{
     margin-left: auto;
     margin-right:auto;
@@ -203,16 +171,7 @@ progress{
     width: 600px;
     
 }
-/* progress{
-    color:#AC82F7;
-}
-progress::-webkit-progress-bar {
-    background-color: white;
-}
 
-progress::-webkit-progress-value {
-    background-color: #C8AFF4 !important;
-} */
 .mixLvl{
     font-family: Cattyla;
     font-size: 70px;
@@ -222,7 +181,9 @@ progress::-webkit-progress-value {
     -webkit-text-stroke: 3px #212121;
     
 }
+.mixProg{
 
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
