@@ -1,44 +1,53 @@
-body {
-  /* height: 844px;
-    width: 390px; */
 
-  justify-content: center;
-  align-items: center;
-  background-image: url("assets/background.jpg");
-  /* background: linear-gradient(#AA9BC4,#554E62) */
+=======
+body{
+
+    
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/r2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
-html {
-  /* height: 844px;
-    width: 390px; */
-  margin: 0;
-  min-height: 100%;
-  min-width: 100%;
+html{
+   
+    margin:0;
+    min-height:100%;
+    min-width:100%;
 }
-a {
-  text-decoration: none;
-  color: #212121;
-  padding: 0;
+a{
+    text-decoration: none;
+    color: #212121;
+    padding:0;
+}
+progress{
+    accent-color: #ffc6db;
+    height: 150px;
+    width: 500px;
 }
 
-#lottie {
-  width: 750px;
-  /* height:100%; */
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  text-align: center;
-  opacity: 1;
+   
+#lottie{
+    
+    width:750px;
+    margin-left: auto;
+    margin-right:auto;
+    display:block;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    text-align: center;
+    opacity: 1;
 }
-.prog {
-  display: flex;
-  flex-direction: column;
+.prog{
+    display: flex;
+    flex-direction: column;
+   
+    margin-left: auto;
+    margin-right:auto;
 
-  margin-left: auto;
-  margin-right: auto;
 }
-/* CSS */
+
 .button-64 {
   align-items: center;
   margin-left: auto;
@@ -91,89 +100,82 @@ a {
   }
 }
 
-.screen {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+
+.screen{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  
+    
+    
 }
-.sTitle {
-  font-family: Cattyla;
-  text-align: center;
-  -webkit-text-stroke: 4px #212121;
-  font-size: 100px;
-  color: #e3d3ff;
-  margin-top: 100px;
-  margin-bottom: 20px;
+.sTitle{
+   
+    font-weight: 700;
+    font-family: Cattyla;
+    text-align: center;
+    -webkit-text-stroke: 3px #212121;
+    font-size: 100px;
+    color: #E3D3FF;
+    margin-top: 50px;
+    margin-bottom: 20px;
+ 
 }
-.bobaContainer {
-  background-color: #e3d3ff;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  width: 90vw;
-  height: 150vw;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 80px;
-  border-color: #ac82f7;
-  border-style: solid;
-  border-width: 4px;
-  box-shadow: 10px 10px 50px 1px #2a213a;
+.bobaContainer{
+    
+    margin-left: auto;
+    margin-right:auto;
+    display: flex;
+    width: 90vw;
+    height: 150vw;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 80px;
+    justify-content: center;
+   
+    
+
 }
 
-.boba1T {
-  width: 440px;
-  margin: 0;
-  text-align: center;
-  font-family: Cattyla;
-  color: white;
-  -webkit-text-stroke: 3px #212121;
-  font-size: 50px;
+.boba1T{
+   
+    margin:0;
+    color: white;
+
 }
 
-.boba1 {
-  width: 420px;
-  height: 520px;
-  /* height:360px; */
-  object-fit: cover;
+.boba1{
+    padding:20px;
+    margin-left: auto;
+    margin-right:auto;
+    width:520px;
+    height: 520px;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
-.boba2 {
-  width: 885px;
-  /* height:360px; */
-  object-fit: cover;
-}
-
-.lock {
-  width: 70px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 100px;
-}
-.bar {
-  margin-left: auto;
-  margin-right: auto;
-  width: 700px;
-  height: 200px;
-}
-/* progress{
-    color:#AC82F7;
-}
-progress::-webkit-progress-bar {
-    background-color: white;
+.boba2{
+    width:885px;
+    object-fit: cover;
 }
 
-progress::-webkit-progress-value {
-    background-color: #C8AFF4 !important;
-} */
-.mixLvl {
-  font-family: Cattyla;
-  font-size: 70px;
-  color: white;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  -webkit-text-stroke: 3px #212121;
+.bar{
+    margin-left: auto;
+    margin-right:auto;
+    width:700px;
+    height: 200px;
+
 }
+.titleImg{
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    width: 600px;
+    
+}
+
 
 .next {
   display: block;
@@ -199,6 +201,25 @@ progress::-webkit-progress-value {
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
+
+.mixLvl{
+    font-family: Cattyla;
+    font-size: 70px;
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    -webkit-text-stroke: 3px #212121;
+    
+}
+.mixProg{
+    direction: flex;
+    
+    align-items: center;
+    justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .tryAgainButton {
@@ -216,6 +237,8 @@ progress::-webkit-progress-value {
 .hidden {
   visibility: hidden;
 }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:wght@700&display=swap');
+
 
 .wrongOrder {
   width: 800px;
@@ -243,3 +266,6 @@ progress::-webkit-progress-value {
   font-family: "Cattyla"; /*a name to be used later*/
   src: url("assets/Cattyla-nR5W0.ttf"); /*URL to font*/
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Paytone+One&family=Poppins:wght@700&display=swap');
+

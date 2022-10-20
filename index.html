@@ -24,28 +24,32 @@
     </script>
 
     <div class="screen">
-      <p class="sTitle">Select Flavour</p>
 
-      <img class="lock" src="assets/lock.png" />
-      <div class="bobaContainer">
-        <a id="milkTea" href="shakeScreen.html" class="boba1T">
-          Milk Tea
-          <img class="boba1" src="assets/milk.png" />
-        </a>
+      <img class="titleImg"src="assets/selFlav.png"/>
+      <!-- <p class="sTitle">Select Favour</p> -->
+      
 
-        <a id="matchaTea" href="shakeScreen.html" class="boba1T">
-          Matcha Milk Tea
-          <img class="boba1" src="assets/matcha.png" />
+       <div class="bobaContainer">
+        <a id="milk" onclick="localStorage.setItem('selectedFlavour', 'milk')" href='shakeScreen.html' class="boba1T"> 
+          <img class="boba1"src='assets/milk1.png'/>
         </a>
-        <a id="taroTea" href="shakeScreen.html" class="boba1T">
-          Taro Milk Tea
-          <img class="boba1" src="assets/taro.png" />
+        <a id="matcha" onclick="localStorage.setItem('selectedFlavour', 'matcha')" href='shakeScreen.html' class="boba1T"> 
+          <img class="boba1"src='assets/matcha1.png'/>
         </a>
-        <a id="strawberryTea" href="shakeScreen.html" class="boba1T">
-          Strawberry Milk Tea
-          <img class="boba1" src="assets/strawberry.png" />
+        <a id="taro" onclick="localStorage.setItem('selectedFlavour', 'taro')" href='shakeScreen.html' class="boba1T"> 
+          <img class="boba1"src='assets/taro1.png'/>
+        </a>
+        <a id="berry" onclick="localStorage.setItem('selectedFlavour', 'berry')" href='shakeScreen.html' class="boba1T"> 
+          <img class="boba1"src='assets/berry1.png'/>
+
         </a>
       </div>
     </div>
+
+
+    
+    <script src="lottie.js"></script>
+    <script src="script.js"></script>
+
   </body>
 </html>
