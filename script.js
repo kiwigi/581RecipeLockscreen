@@ -23,8 +23,6 @@ function chooseDrink(id){
 
 
 
-
-
 let animation = bodymovin.loadAnimation({
     container: document.getElementById('lottie'),
     renderer: "svg",
@@ -33,4 +31,3 @@ let animation = bodymovin.loadAnimation({
     path: chooseDrink(localStorage.getItem('selectedFlavour'))
 })
 
-console.log(localStorage.getItem('selectedFlavour'))
