@@ -81,12 +81,6 @@
     <div class="screen">
       <p class="sTitle">Shake device to mix!</p>
 
-      <div class="next">
-        <a href="strawScreen.html">
-          <button class="nextButton" onclick="saveShakeProgress()">Next</button>
-        </a>
-      </div>
-
       <div class="bobaContainer">
         <div id="lottie"></div>
         <div className="mixProg">
@@ -96,6 +90,12 @@
             <div id="progNum">0%</div>
           </div>
         </div>
+      </div>
+
+      <div class="next">
+        <a href="strawScreen.html">
+          <button class="nextButton" onclick="saveShakeProgress()">Next</button>
+        </a>
       </div>
 
       <button id="accelPermsButton" class="button-64" onclick="getAccel()">
