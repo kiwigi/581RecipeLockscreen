@@ -77,7 +77,10 @@
       }, 150);
 
       function saveShakeProgress() {
+        alert("test" + shakeCounter * 5);
         localStorage.setItem("shakeProgress", shakeCounter * 5);
+        let shakeProgress = localStorage.getItem("shakeProgress");
+        alert("test2" + shakeProgress);
       }
     </script>
 
