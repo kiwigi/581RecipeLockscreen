@@ -26,7 +26,13 @@ a{
     color: #212121;
     padding:0;
 }
-  
+progress{
+    accent-color: #ffc6db;
+    height: 150px;
+    width: 500px;
+}
+
+   
 #lottie{
     
     width:750px;
