@@ -6,7 +6,11 @@ body{
     
     justify-content: center;
     align-items: center;
-    background-image: url('assets/background.jpg');
+    background-image: url('assets/r2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
     /* background: linear-gradient(#AA9BC4,#554E62) */
     
 }
@@ -104,9 +108,13 @@ a{
     
 }
 .sTitle{
+    
+    /* font-family: 'Josefin Sans', sans-serif; */
+    /* font-family: 'Poppins', sans-serif ; */
+    font-weight: 700;
     font-family: Cattyla;
     text-align: center;
-    -webkit-text-stroke: 4px #212121;
+    -webkit-text-stroke: 3px #212121;
     font-size: 100px;
     color: #E3D3FF;
     margin-top: 100px;
@@ -117,7 +125,7 @@ a{
  
 }
 .bobaContainer{
-    background-color: #E3D3FF;
+    /* background-color: #E3D3FF; */
     margin-left: auto;
     margin-right:auto;
     display: flex;
@@ -127,30 +135,38 @@ a{
     display: flex;
     flex-wrap: wrap;
     border-radius: 80px;
-    border-color: #AC82F7;
-    border-style: solid;
-    border-width: 4px;
-    box-shadow: 10px 10px 50px 1px #2a213a;
+    justify-content: center;
+    /* border-color: #AC82F7; */
+    /* border-style: solid;
+    border-width: 4px; */
+    /* box-shadow: 10px 10px 50px 1px #2a213a; */
     
 
 }
 
 .boba1T{
-    width:440px;
+    /* margin-left: auto;
+    margin-right:auto; */
+    /* width:440px; */
     margin:0;
-    text-align: center;
-    font-family: Cattyla;
+    /* text-align: center;
+    font-family: Cattyla; */
     color: white;
-    -webkit-text-stroke: 3px #212121;
-    font-size: 50px;
+    /* -webkit-text-stroke: 3px #212121;
+    font-size: 50px; */
 
 }
 
 .boba1{
-    width:420px;
+    padding:20px;
+    margin-left: auto;
+    margin-right:auto;
+    width:520px;
     height: 520px;
     /* height:360px; */
-    object-fit: cover;
+    /* object-fit: cover; */
+    display: flex;
+    flex-wrap: wrap;
     
 }
 .boba2{
@@ -172,6 +188,14 @@ a{
     width:700px;
     height: 200px;
 
+}
+.titleImg{
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    width: 600px;
+    
 }
 /* progress{
     color:#AC82F7;
@@ -200,4 +224,6 @@ progress::-webkit-progress-value {
     font-family: 'Cattyla'; /*a name to be used later*/
     src: url('assets/Cattyla-nR5W0.ttf'); /*URL to font*/
 }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:wght@700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Paytone+One&family=Poppins:wght@700&display=swap');
