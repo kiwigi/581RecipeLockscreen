@@ -40,6 +40,7 @@
         z1 = e.accelerationIncludingGravity.z;
     }, false);
 
+    let sound = new Audio('assets/shake.mp3')
   
     setInterval(function () {
         var change = Math.abs(z1-z2);
@@ -49,7 +50,6 @@
             shakeCounter++
             animation.play();
             document.getElementById("shakeProgress").value += 5;
-            let sound = new Audio('assets/shake.mp3')
             sound.play();
         }
         if (document.getElementById("shakeProgress").value==100){
