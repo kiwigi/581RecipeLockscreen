@@ -43,6 +43,10 @@ progress{
     text-align: center;
     opacity: 1;
 }
+
+#strawAnimation{
+    width:750px;
+}
 .prog{
     display: flex;
     flex-direction: column;
