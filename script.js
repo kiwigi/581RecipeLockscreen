@@ -1,3 +1,27 @@
+function setDrink(id){
+    localStorage.setItem('selectedFlavour', id)
+    
+}
+
+function chooseDrink(id){
+    let path = ''
+
+    if(id=="milk"){
+        path = 'assets/milkShake.json'
+    }
+    else if(id=="matcha"){
+        path = 'assets/matchaShake.json'
+    }
+    else if(id=="taro"){
+        path = 'assets/taroShake.json'
+    }else{//berry
+        path = 'assets/berryShake.json'
+
+    }
+    return path
+}
+
+
 
 
 
@@ -6,5 +30,7 @@ let animation = bodymovin.loadAnimation({
     renderer: "svg",
     loop: true,
     autoplay: false,
-    path: 'assets/data.json'
+    path: chooseDrink(localStorage.getItem('selectedFlavour'))
 })
+
+console.log(localStorage.getItem('selectedFlavour'))
