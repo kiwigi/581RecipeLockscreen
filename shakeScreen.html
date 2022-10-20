@@ -15,13 +15,11 @@
     function getAccel(){
     DeviceMotionEvent.requestPermission().then(response => {
         if (response == 'granted') {
-        // Add a listener to get smartphone acceleration 
-            // in the XYZ axes (units in m/s^2)
+ 
             window.addEventListener('devicemotion', (event) => {
                 console.log(event);
             });
-       // Add a listener to get smartphone orientation 
-           // in the alpha-beta-gamma axes (units in degrees)
+   
             window.addEventListener('deviceorientation',(event) => {
                 console.log(event);
             });
@@ -29,23 +27,20 @@
     });
 }
     if (typeof window.DeviceMotionEvent != 'undefined') {
-    // Shake sensitivity (a lower number is more)
+
     var sensitivity = 20;
 
     // Position variables
     var x1 = 0, y1 = 0, z1 = 0, x2 = 0, y2 = 0, z2 = 0;
 
-    // Listen to motion events and update the position
+   
     window.addEventListener('devicemotion', function (e) {
         x1 = e.accelerationIncludingGravity.x;
-        // y1 = e.accelerationIncludingGravity.y;
+        y1 = e.accelerationIncludingGravity.y;
         z1 = e.accelerationIncludingGravity.z;
     }, false);
 
   
-
-    // Periodically check the position and fire
-    // if the change is greater than the sensitivity
     setInterval(function () {
         var change = Math.abs(z1-z2);
         shakeCounter = 0
@@ -54,15 +49,15 @@
             shakeCounter++
             animation.play();
             document.getElementById("shakeProgress").value += 5;
+            let sound = new Audio('assets/shake.mp3')
+            sound.play();
         }
         if (document.getElementById("shakeProgress").value==100){
             animation.stop();
+            sound.stop();
         }
   
-
-        // Update new position
         x2 = x1;
-        // y2 = y1;
         z2 = z1;
     }, 150);
 }
