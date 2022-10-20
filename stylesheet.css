@@ -1,5 +1,4 @@
 
-=======
 body{
 
     
@@ -201,6 +200,8 @@ progress{
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
+
+}
 
 .mixLvl{
     font-family: Cattyla;
