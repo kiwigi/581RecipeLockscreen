@@ -32,7 +32,7 @@
         );
 
         let shakeProgress = sessionStorage.getItem("shakeProgress");
-        let teaFlavour = sessionStorage.getItem("teaFlavour");
+        let teaFlavour = localStorage.getItem("selectedFlavour");
 
         // Periodically check the position and fire
         // if the change is greater than the sensitivity
@@ -42,11 +42,13 @@
             if (teaFlavour == "milk") {
               document.getElementById("boba").src = "assets/milkWithStraw.png";
             } else if (teaFlavour == "matcha") {
-              document.getElementById("boba").src = "assets/matchaWithStraw.png";
+              document.getElementById("boba").src =
+                "assets/matchaWithStraw.png";
             } else if (teaFlavour == "taro") {
               document.getElementById("boba").src = "assets/taroWithStraw.png";
             } else if (teaFlavour == "strawberry") {
-              document.getElementById("boba").src = "assets/strawberryWithStraw.png";
+              document.getElementById("boba").src =
+                "assets/strawberryWithStraw.png";
             }
             if (shakeProgress == 0 && teaFlavour == "matcha") {
               window.location.href = "fakeHomeScreen.html";
@@ -61,7 +63,7 @@
       }
 
       window.onload = function () {
-        let teaFlavour = sessionStorage.getItem("teaFlavour");
+        let teaFlavour = localStorage.getItem("selectedFlavour");
         if (teaFlavour == "milk") {
           document.getElementById("boba").src = "assets/milk.png";
         } else if (teaFlavour == "matcha") {
