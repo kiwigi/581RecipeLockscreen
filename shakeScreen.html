@@ -43,7 +43,7 @@
     const sound = new Audio('assets/shake.mp3')
   
     onShake(function () {
-        var change = Math.abs(z1-z2+x1-x2);
+        var change = Math.abs((z1-z2)+(x1-x2)+(y1-y2));
         shakeCounter = 0
         if (change > sensitivity) {
             
@@ -66,19 +66,16 @@
     <div class="screen">
       <p class="sTitle">Shake device to mix!</p>
       <button id="accelPermsButton"  class="button-64" onclick="getAccel()"><p>iOS users! Please click here to enable permissions </p></button>
-       <div class="bobaContainer">
-
-            <div id="lottie"></div>
-
-        <div class="indicatorDot" style="left:30%; top:30%;"></div>
-        <div className="mixProg">
-            <p class="mixLvl">Mix Level:</p>
-        <div class="prog">
-            <progress id="shakeProgress" value=0 max="100">  </progress>
-        </div>
-        </div>
-
-        
+      
+      
+      <!-- <div class="bobaContainer"> -->
+           <div id="lottie"></div>
+       <div className="mixProg">
+           <p class="mixLvl">Mix Level:</p>
+           <div class="prog">
+               <progress id="shakeProgress" value=0 max="100">  </progress>
+           </div>
+       <!-- </div> -->
        </div> 
     </div>
     <script src="lottie.js"></script>
