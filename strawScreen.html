@@ -37,6 +37,7 @@
         // Periodically check the position and fire
         // if the change is greater than the sensitivity
         setInterval(function () {
+          console.log(teaFlavour);
           var change = Math.abs(y2 - y1);
           if (change > sensitivity) {
             if (teaFlavour == "milk") {
@@ -46,7 +47,7 @@
                 "assets/matchaWithStraw.png";
             } else if (teaFlavour == "taro") {
               document.getElementById("boba").src = "assets/taroWithStraw.png";
-            } else if (teaFlavour == "strawberry") {
+            } else if (teaFlavour == "berry") {
               document.getElementById("boba").src =
                 "assets/strawberryWithStraw.png";
             }
@@ -70,7 +71,7 @@
           document.getElementById("boba").src = "assets/matcha.png";
         } else if (teaFlavour == "taro") {
           document.getElementById("boba").src = "assets/taro.png";
-        } else if (teaFlavour == "strawberry") {
+        } else if (teaFlavour == "berry") {
           document.getElementById("boba").src = "assets/strawberry.png";
         }
       };
