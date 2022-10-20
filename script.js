@@ -1,7 +1,4 @@
-function setDrink(id){
-    localStorage.setItem('selectedFlavour', id)
-    
-}
+
 
 function chooseDrink(id){
     let path = ''
