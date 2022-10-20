@@ -86,19 +86,21 @@
       <div class="bobaContainer">
         <div id="lottie"></div>
         <div className="mixProg">
-          <p class="mixLvl">Mix Level:</p>
-          <div class="prog">
+            <div style="display: flex; flex-direction: row;">
+                <p class="mixLvl">Mix Level:</p>
+                <div id="progNum">0%</div>
+            </div>
+        <div class="prog">
             <progress id="shakeProgress" value="0" max="100"></progress>
-            <div id="progNum">0%</div>
-          </div>
+        </div>
         </div>
       </div>
-
       <div class="next">
         <a href="strawScreen.html">
           <button class="nextButton" onclick="saveShakeProgress()">Next</button>
         </a>
       </div>
+
 
       <button id="accelPermsButton" class="button-64" onclick="getAccel()">
         <p>iOS users! Please click here to enable permissions</p>
